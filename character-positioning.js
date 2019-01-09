@@ -1,18 +1,18 @@
-console.log(letterPositions("this is a test"));
+console.log(countLetters("This is a test"));
 
-function letterPositions(input){
+function countLetters(input){
 
+  var lowerCaseInput = input.toLowerCase();
   var letters = {};
 
   for (var i = 0; i < input.length; i ++){
-    if (input[i].match(/[a-z]/) && !(letters.hasOwnProperty(input[i]))){
-      letters[input[i]] = [i];
-    } else if (input[i].match(/[a-z]/) && (letters.hasOwnProperty(input[i]))){
-      letters[input[i]].push(i);
+    var currentChar = lowerCaseInput[i];
+    if (currentChar.match(/[a-z]/) && !(letters.hasOwnProperty(currentChar))){
+      letters[currentChar] = [i];
+    } else if (currentChar.match(/[a-z]/) && (letters.hasOwnProperty(currentChar))){
+      letters[currentChar].push(i);
     } else {continue;}
   }
-
-  console.log(letters);
 
   return letters;
 
