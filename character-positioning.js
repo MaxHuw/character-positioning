@@ -1,6 +1,6 @@
-console.log(countLetters("this is a test"));
+console.log(letterPositions("this is a test"));
 
-function countLetters(input){
+function letterPositions(input){
 
   var letters = {};
 
