@@ -5,9 +5,9 @@ function letterPositions(input){
   var letters = {};
 
   for (var i = 0; i < input.length; i ++){
-    if (input[i].match(/[a-z]/) && !(input[i] in letters)){
+    if (input[i].match(/[a-z]/) && !(letters.hasOwnProperty(input[i]))){
       letters[input[i]] = [i];
-    } else if (input[i].match(/[a-z]/) && (input[i] in letters)){
+    } else if (input[i].match(/[a-z]/) && (letters.hasOwnProperty(input[i]))){
       letters[input[i]].push(i);
     } else {continue;}
   }
